@@ -1,0 +1,20 @@
+{
+    "require": {
+        "slim/slim": "3.*",
+        "slim/psr7": "^1.5",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "laminas/laminas-diactoros": "^2.19",
+        "pimple/pimple": "3.0",
+        "tuupola/slim-basic-auth": "^3.3",
+        "tuupola/slim-jwt-auth": "^3.3",
+        "firebase/php-jwt": "^5.0",
+        "slim/php-view": "^3.2",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4":{
+            "App\\" : "App"
+        }
+    }
+}

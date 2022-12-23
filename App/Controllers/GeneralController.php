@@ -9,7 +9,7 @@ use App\DAO\IndexDAO;
 final class GeneralController{
 
 
-    public function getTreePoints(Request $request, Response $response, array $args): Response{
+    public function getThreePoints(Request $request, Response $response, array $args): Response{
 
         $indexDAO = new IndexDAO();
         $tabel = '3points';

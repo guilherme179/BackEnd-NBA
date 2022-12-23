@@ -10,11 +10,11 @@ $app = new \Slim\App(slimConfiguration());
 
 $app->post('/login', AuthController::class . ':login');
 
-$app->get('/tree-points', GeneralController::class . ':getTreePoints')->add(jwtAuth());
-$app->get('/assistants', GeneralController::class . ':getAssistants')->add(jwtAuth());
-$app->get('/blocks', GeneralController::class . ':getBlocks')->add(jwtAuth());
-$app->get('/points', GeneralController::class . ':getPoints')->add(jwtAuth());
-$app->get('/rebounds', GeneralController::class . ':getRebounds')->add(jwtAuth());
-$app->get('/steals', GeneralController::class . ':getSteals')->add(jwtAuth());
+$app->get('/three-points', GeneralController::class . ':getThreePoints');
+$app->get('/assistants', GeneralController::class . ':getAssistants');
+$app->get('/blocks', GeneralController::class . ':getBlocks');
+$app->get('/points', GeneralController::class . ':getPoints');
+$app->get('/rebounds', GeneralController::class . ':getRebounds');
+$app->get('/steals', GeneralController::class . ':getSteals');
 
 $app->run();

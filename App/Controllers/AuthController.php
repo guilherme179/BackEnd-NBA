@@ -19,6 +19,7 @@ final class AuthController{
         if(!empty($data['user']) && !empty($data['password'])) {
             $name = $data['user'];
             $password = $data['password'];
+            $expiredAt = (new \DateTime('now'))->modify('+1 day')->format('Y-m-d H:i:s');
         
             $users = $usersDAO->getUserByUser($name);
 
@@ -30,7 +31,9 @@ final class AuthController{
 
             $usersArray = [
                 "id" => $users->getId(),
-                "nome" => $users->getUser()
+                "user" => $users->getUser(),
+                "exp" => (new \DateTime($expiredAt))->getTimestamp(),
+                "iat" => time()
             ];
 
             $token = JWT::encode($usersArray, 'dd33d297f0352992cc54eb253fcf020f', 'HS256'); 
